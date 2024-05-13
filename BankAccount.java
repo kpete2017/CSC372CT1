@@ -1,3 +1,8 @@
+// Kyle Petersen
+// 05/13/2020
+// Programming II
+// Critical Thinking 1
+
 import java.text.DecimalFormat;
 
 public class BankAccount {
