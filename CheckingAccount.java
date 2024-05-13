@@ -7,6 +7,11 @@ public class CheckingAccount extends BankAccount {
 
     public void processWithdrawl(double amount) {
         super.withdrawl(amount);
+        if (super.getBalance() < 0) {
+            System.out.println("Account is Overdrawn! Applying Overdraft fee.");
+            super.withdrawl(30);
+        }
+        System.out.println("New Balance: " + super.getBalance());
     }
 
     public void displayAccount() {
