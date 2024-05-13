@@ -1,7 +1,9 @@
+import java.text.DecimalFormat;
+
 public class BankAccount {
     private double balance;
-    private string firstName;
-    private string lastName;
+    private String firstName;
+    private String lastName;
     private int accountID;
 
 
@@ -11,19 +13,19 @@ public class BankAccount {
     }
 
     /** Getters and Setters */
-    public string getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
     
-    public void setFirstName(string name) {
+    public void setFirstName(String name) {
         firstName = name;
     }
     
-    public string getLastName() {
+    public String getLastName() {
         return lastName;
     }
     
-    public void setLastName(string name) {
+    public void setLastName(String name) {
         lastName = name;
     }
 
@@ -37,12 +39,16 @@ public class BankAccount {
 
     /** Balance Methods */
     
-    public void deposit(double value) {
-        balance += amount;
+    public void deposit(double amount) {
+        DecimalFormat f = new DecimalFormat("##.00");
+        double temp = balance + amount;
+        balance = Double.parseDouble(f.format(temp));    
     }
 
-    public void withdrawl(double value) {
-        balance -= amount;
+    public void withdrawl(double amount) {
+        DecimalFormat f = new DecimalFormat("##.00");
+        double temp = balance - amount;
+        balance = Double.parseDouble(f.format(temp));
     }
 
     public double getBalance() {
@@ -55,5 +61,4 @@ public class BankAccount {
         System.out.println("Name: " + firstName + " " + lastName);
         System.out.println("Balance: " + balance);
     }
-
 }
