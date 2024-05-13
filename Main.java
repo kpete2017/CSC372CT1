@@ -6,8 +6,8 @@ public class Main {
         account.setFirstName("John");
         account.setLastName("Doe");
         account.setAccountID(12345);
-        account.deposit(100);
-        account.processWithdrawl(50);
+        account.deposit(50);
+        account.processWithdrawl(51);
         account.displayAccount();
     }
 }
